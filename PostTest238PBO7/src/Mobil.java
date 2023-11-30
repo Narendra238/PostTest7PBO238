@@ -28,13 +28,13 @@ class Mobil extends Kendaraan {
                 System.out.println("Mobil berjalan");
                 // Tampilkan output
                 jumlahBensin -= 10;
-                System.out.println("Mobil berjalan, jumlah bensin tersisa: " + jumlahBensin);
+                System.out.println("Mobil berjalan, jumlah bensin tersisa: " + jumlahBensin +" Liter");
                 // Cek apakah mobil kehabisan bensin
             }
             if (jumlahBensin == 0) {
                 System.out.println("Bensin habis, mobil berhenti");
             }
-            }
+        }
         else {
             System.out.println("Mesin belum dinyalakan, mobil tidak bisa berjalan");
         }
