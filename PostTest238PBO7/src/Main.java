@@ -37,18 +37,6 @@ public class Main {
                     mobil.inspect();
                     break;
                 case 4:
-                    // Cek apakah mesin sudah dinyalakan
-                    if (mobil.mesinMenyala()) {
-                        System.out.println("Mobil belum dinyalakan");
-                        break;
-                    }
-
-                    // Cek apakah mobil sudah diisi bensin
-                    if (mobil.jumlahBensin <= 0) {
-                        System.out.println("Mobil belum diisi bensin");
-                        break;
-                    }
-
                     // Jalankan mobil
                     mobil.jalan();
                     break;
@@ -59,8 +47,8 @@ public class Main {
                 case 6:
                     if (mobil.keluar()){
                         repeat = false;
-                        break;
                     }
+                    break;
                 default:
                     System.out.println("Pilihan tidak valid");
                     break;

@@ -1,8 +1,7 @@
 class Mobil extends Kendaraan {
-    private boolean StatusMesin = false;
+    private boolean StatusMesin = true;
     public Mobil(String jenis, String bahanBakar, int jumlahBensin) {
         super(jenis, bahanBakar, jumlahBensin);
-        this.StatusMesin = StatusMesin;
     }
 
     @Override
@@ -10,9 +9,8 @@ class Mobil extends Kendaraan {
         if (this.StatusMesin){
             this.StatusMesin = true;
             System.out.println("MESIN NYALA BROM BROM");
-        }
-        else {
-            System.out.println("MESIN SUDAH MATI");
+        }else {
+            System.out.println("MESIN SUDAH NYALA BROM BROM");
         }
     }
 
@@ -21,9 +19,8 @@ class Mobil extends Kendaraan {
         if (this.StatusMesin){
             this.StatusMesin = false;
             System.out.println("MESIN MATI");
-        }
-        else{
-            System.out.println("MESIN MASIH MENYALA");
+        }else{
+            System.out.println("MESIN SUDAH MATI");
         }
     }
 
@@ -35,22 +32,59 @@ class Mobil extends Kendaraan {
 
     @Override
     public void jalan() {
-        if (mesinMenyala()) {
-            if (jumlahBensin > 0) {
-                System.out.println("Mobil berjalan");
-                // Tampilkan output
-                jumlahBensin -= 10;
-                System.out.println("Mobil berjalan, jumlah bensin tersisa: " + jumlahBensin +" Liter");
-                // Cek apakah mobil kehabisan bensin
-            }
+        if (this.StatusMesin == true && jumlahBensin > 0) {
+            System.out.println("Mobil berjalan");
+            // Tampilkan output
+            jumlahBensin -= 10;
+            System.out.println("Mobil berjalan, jumlah bensin tersisa: " + jumlahBensin +" Liter");
+            // Cek apakah mobil kehabisan bensin
             if (jumlahBensin == 0) {
                 System.out.println("Bensin habis, mobil berhenti");
             }
         }
+        // Cek apakah mobil sudah diisi bensin
+        if (jumlahBensin <= 0) {
+            System.out.println("Mobil belum diisi bensin");
+
+        }
+        // Cek apakah mesin sudah dinyalakan
+        if (this.StatusMesin == false) {
+            System.out.println("Mobil belum dinyalakan");
+
+        }
+
         else {
-            System.out.println("Mesin belum dinyalakan, mobil tidak bisa berjalan");
+            System.out.println("Mobil tidak bisa berjalan");
         }
     }
+//    public void jalan() {
+//        // Cek apakah mesin sudah dinyalakan
+//        if (this.StatusMesin == false) {
+//            System.out.println("Mobil belum dinyalakan");
+//
+//        }
+//
+//        // Cek apakah mobil sudah diisi bensin
+//        if (jumlahBensin <= 0) {
+//            System.out.println("Mobil belum diisi bensin");
+//
+//        }
+//        if (this.StatusMesin == true) {
+//            if (jumlahBensin > 0) {
+//                System.out.println("Mobil berjalan");
+//                // Tampilkan output
+//                jumlahBensin -= 10;
+//                System.out.println("Mobil berjalan, jumlah bensin tersisa: " + jumlahBensin +" Liter");
+//                // Cek apakah mobil kehabisan bensin
+//            }
+//            if (jumlahBensin == 0) {
+//                System.out.println("Bensin habis, mobil berhenti");
+//            }
+//        }
+//        else {
+//            System.out.println("Mobil tidak bisa berjalan");
+//        }
+//    }
 
     @Override
     public void inspect() {
@@ -66,9 +100,6 @@ class Mobil extends Kendaraan {
         }
 
         System.out.println("Anda Silakan Keluar Mobil");
-        return true;
-    }
-    public boolean mesinMenyala(){
         return true;
     }
 
