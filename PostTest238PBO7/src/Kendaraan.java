@@ -18,4 +18,5 @@ abstract class Kendaraan {
     public abstract void jalan();
 
     public abstract void inspect();
+    public abstract boolean keluar();
 }

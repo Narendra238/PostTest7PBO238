@@ -18,7 +18,8 @@ public class Main {
         System.out.println("6. Keluar");
 
         // Mulai perulangan
-        while (mobil.mesinMenyala()) {
+        boolean repeat = true;
+        while (repeat) {
 
             // Baca input dari pengguna
             System.out.print("Masukkan pilihan Anda: ");
@@ -37,7 +38,7 @@ public class Main {
                     break;
                 case 4:
                     // Cek apakah mesin sudah dinyalakan
-                    if (!mobil.mesinMenyala()) {
+                    if (mobil.mesinMenyala()) {
                         System.out.println("Mobil belum dinyalakan");
                         break;
                     }
@@ -56,18 +57,10 @@ public class Main {
                     mobil.isiBensin();
                     break;
                 case 6:
-                    if (!mobil.mesinMenyala()) {
-                        if (!mobil.mesinMenyala()) {
-                            mobil.nyalakanMesin();
-                            System.out.println("Mobil belum dimatikan");
-                            break;
-                        }
-                    } else {
-                        mobil.mesinMatikan();
-                        System.out.println("Keluar dari mobil");
+                    if (mobil.keluar()){
+                        repeat = false;
                         break;
                     }
-
                 default:
                     System.out.println("Pilihan tidak valid");
                     break;
