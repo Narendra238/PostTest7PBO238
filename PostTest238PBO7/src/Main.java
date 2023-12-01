@@ -5,10 +5,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Buat objek mobil
+
         Mobil mobil = new Mobil("Innova Reborn Diesel", "Solar",0);
 
-        // Tampilkan menu
         System.out.println("Pilih menu:");
         System.out.println("1. Nyalakan Mesin");
         System.out.println("2. Matikan Mesin");
@@ -17,15 +16,15 @@ public class Main {
         System.out.println("5. Isi Bensin");
         System.out.println("6. Keluar");
 
-        // Mulai perulangan
+
         boolean repeat = true;
         while (repeat) {
 
-            // Baca input dari pengguna
+
             System.out.print("Masukkan pilihan Anda: ");
             int pilihan = scanner.nextInt();
 
-            // Lakukan tindakan sesuai pilihan pengguna
+
             switch (pilihan) {
                 case 1:
                     mobil.nyalakanMesin();
@@ -37,7 +36,6 @@ public class Main {
                     mobil.inspect();
                     break;
                 case 4:
-                    // Jalankan mobil
                     mobil.jalan();
                     break;
 

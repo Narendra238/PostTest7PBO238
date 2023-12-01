@@ -6,8 +6,8 @@ class Mobil extends Kendaraan {
 
     @Override
     public void nyalakanMesin() {
+        this.StatusMesin = true;
         if (this.StatusMesin){
-            this.StatusMesin = true;
             System.out.println("MESIN NYALA BROM BROM");
         }else {
             System.out.println("MESIN SUDAH NYALA BROM BROM");
@@ -16,8 +16,8 @@ class Mobil extends Kendaraan {
 
     @Override
     public void mesinMatikan() {
+        this.StatusMesin = false;
         if (this.StatusMesin){
-            this.StatusMesin = false;
             System.out.println("MESIN MATI");
         }else{
             System.out.println("MESIN SUDAH MATI");
@@ -53,44 +53,14 @@ class Mobil extends Kendaraan {
 
         }
 
-        else {
-            System.out.println("Mobil tidak bisa berjalan");
-        }
     }
-//    public void jalan() {
-//        // Cek apakah mesin sudah dinyalakan
-//        if (this.StatusMesin == false) {
-//            System.out.println("Mobil belum dinyalakan");
-//
-//        }
-//
-//        // Cek apakah mobil sudah diisi bensin
-//        if (jumlahBensin <= 0) {
-//            System.out.println("Mobil belum diisi bensin");
-//
-//        }
-//        if (this.StatusMesin == true) {
-//            if (jumlahBensin > 0) {
-//                System.out.println("Mobil berjalan");
-//                // Tampilkan output
-//                jumlahBensin -= 10;
-//                System.out.println("Mobil berjalan, jumlah bensin tersisa: " + jumlahBensin +" Liter");
-//                // Cek apakah mobil kehabisan bensin
-//            }
-//            if (jumlahBensin == 0) {
-//                System.out.println("Bensin habis, mobil berhenti");
-//            }
-//        }
-//        else {
-//            System.out.println("Mobil tidak bisa berjalan");
-//        }
-//    }
+
 
     @Override
     public void inspect() {
         System.out.println("Jenis mobil: " + jenis);
         System.out.println("Jenis bahan bakar: " + bahanBakar);
-        System.out.println("Jumlah bensin: " + jumlahBensin);
+        System.out.println("Jumlah Solar: " + jumlahBensin);
     }
 
     public boolean keluar() {
