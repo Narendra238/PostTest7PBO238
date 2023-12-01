@@ -1,10 +1,7 @@
 import java.util.Scanner;
-
 public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
 
         Mobil mobil = new Mobil("Innova Reborn Diesel", "Solar",0);
 
@@ -15,7 +12,6 @@ public class Main {
         System.out.println("4. Jalan");
         System.out.println("5. Isi Bensin");
         System.out.println("6. Keluar");
-
 
         boolean repeat = true;
         while (repeat) {
